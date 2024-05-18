@@ -9,16 +9,16 @@ export default {
 	input: 'src/index.jsx',
 	output: {
 		file: 'dist/bundle.js',
-		format: 'iife'
+		format: 'cjs'
 	},
 	plugins: [
-		nodeResolve({
-			extensions: [".js"],
-			babelHelpers: "runtime"
-		}),
+		nodeResolve(),
 		commonjs(),
 		babel({
 			presets: ['@babel/preset-env', '@babel/preset-react'],
+			plugins: [
+				'babel-plugin-react-compiler'
+			]
 		}),
 		replace({
 			preventAssignment: true,
