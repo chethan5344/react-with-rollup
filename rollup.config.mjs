@@ -16,9 +16,9 @@ export default {
 		commonjs(),
 		babel({
 			presets: ['@babel/preset-env', '@babel/preset-react'],
-			plugins: [
-				'babel-plugin-react-compiler'
-			]
+			//plugins: [
+			//	'babel-plugin-react-compiler'
+			//]
 		}),
 		replace({
 			preventAssignment: true,
