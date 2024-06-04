@@ -16,21 +16,21 @@ export default {
 		commonjs(),
 		babel({
 			presets: ['@babel/preset-env', '@babel/preset-react'],
-			//plugins: [
-			//	'babel-plugin-react-compiler'
-			//]
+			plugins: [
+				'babel-plugin-react-compiler'
+			]
 		}),
 		replace({
 			preventAssignment: true,
-			'process.env.NODE_ENV': JSON.stringify('development'),
+			'process.env.NODE_ENV': JSON.stringify('production'),
 		}),
 		serve({
 			open: true,
 			verbose: true,
 			contentBase: ["", "public"],
-			host: "localhost",
+			// host: "localhost",
 			port: 3000,
 		}),
-		livereload({ watch: "dist" }),
+		// livereload({ watch: "dist" }),
 	]
 };
